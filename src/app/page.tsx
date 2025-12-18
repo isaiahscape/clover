@@ -15,10 +15,10 @@ import { Source } from "@/components/source";
 import { TextScroll } from "@/components/ui/text-scroll";
 
 export const metadata: Metadata = {
-  title: "Landing | shenanigans.",
+  title: "Landing | Clover",
   description: "Where it all begins.",
   openGraph: {
-    title: "Landing | shenanigans.",
+    title: "Landing | Clover",
     description: "Where it all begins.",
   },
 };
@@ -28,10 +28,10 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "WebPage",
     name: "Leonardo",
-    alternateName: "shenanigans.",
+    alternateName: "Clover",
     mainEntityOfPage: "https://isaiahthings.eu.org/",
     description: "Where it all begins.",
-    url: "https://isaiahthings.eu.org/",
+    url: "https://isaiahthings.me/",
     breadcrumb: {
       "@type": "BreadcrumbList",
       itemListElement: [
@@ -85,9 +85,7 @@ export default function Home() {
                 <span className="text-sm font-mono">description.md</span>
               </h2>
               <p className="px-5 py-3">
-                Not here to impress — just keeping it real. Welcome to my personal corner of the web.
-                I&apos;m Isiaih Rafael Pavia, living in Davao, Philippines. Age 20. If you&apos;re
-                interested in working together, feel free to reach out via my work email.
+                WIP.
               </p>
             </div>
             <div className="w-full bg-background rounded-lg border border-border">
