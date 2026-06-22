@@ -70,11 +70,11 @@ export default function Page() {
           transition={{ duration: 0.4 }}
         >
           <div
-            className="min-h-screen bg-zinc-50/50 dark:bg-black text-neutral-900 dark:text-neutral-100 flex flex-col justify-between selection:bg-indigo-500/10 transition-colors duration-200"
+            className="min-h-screen bg-background text-foreground flex flex-col justify-between selection:bg-indigo-500/10 transition-colors duration-200"
             id="main-app-container"
           >
             <header
-              className="sticky top-0 z-40 w-full border-b border-zinc-200/40 dark:border-zinc-800/20 bg-white/70 dark:bg-black/70 backdrop-blur-md"
+              className="sticky top-0 z-40 w-full border-b border-border bg-background/70 dark:bg-background/70 backdrop-blur-md"
               id="top-floating-header"
             >
               <div className="max-w-[1440px] mx-auto px-6 py-4 flex items-center justify-between" id="header-content-inner">
@@ -84,11 +84,11 @@ export default function Page() {
                   id="brand-logo"
                 >
                   <img src="/favicon.svg" alt="Logo" className="w-6 h-6 dark:invert" />
-                  <span className="font-mono text-sm tracking-tight font-bold text-zinc-900 dark:text-zinc-100">
-                    Leonardo's Terrace
+                  <span className="font-mono text-sm tracking-tight font-bold text-foreground">
+                    Thysvl's Clover
                   </span>
-                  <span className="text-zinc-300 dark:text-zinc-700 font-normal">/</span>
-                  <span className="font-mono text-xs text-zinc-500 capitalize">{activeTab}</span>
+                  <span className="text-muted-foreground font-normal">/</span>
+                  <span className="font-mono text-xs text-muted-foreground capitalize">{activeTab}</span>
                 </div>
                 <div className="flex items-center gap-2" id="action-tools-panel">
                   <ThemeToggle />
@@ -116,7 +116,7 @@ export default function Page() {
               id="floating-dock-row"
             >
               <nav
-                className="p-1 px-1.5 sm:px-3 flex gap-0.5 sm:gap-1.5 justify-center sm:justify-start items-center rounded-full border border-zinc-200/10 dark:border-white/10 bg-black/70 dark:bg-black/65 backdrop-blur-xl shadow-[0_20px_40px_-10px_rgba(0,0,0,0.5)]"
+                className="p-1 px-1.5 sm:px-3 flex gap-0.5 sm:gap-1.5 justify-center sm:justify-start items-center rounded-full border border-border/10 bg-background/70 dark:bg-background/65 backdrop-blur-xl shadow-[0_20px_40px_-10px_rgba(0,0,0,0.3)]"
                 id="floating-navigation-island"
               >
                 {navItems.map((item) => {
@@ -132,13 +132,13 @@ export default function Page() {
                       {isActive && (
                         <motion.div
                           layoutId="active-island-slide"
-                          className="absolute inset-0 bg-white/10 dark:bg-white/10 border border-white/5 rounded-full z-0"
+                          className="absolute inset-0 bg-primary/10 dark:bg-primary/10 border border-primary/5 rounded-full z-0"
                           transition={{ type: "spring", stiffness: 380, damping: 30 }}
                         />
                       )}
                       <Icon
                         className={`shrink-0 z-10 transition-all duration-200 ${
-                          isActive ? "text-white w-3.5 h-3.5" : "text-zinc-400 group-hover:text-zinc-200 w-3.5 h-3.5 sm:w-4 sm:h-4"
+                          isActive ? "text-primary-foreground w-3.5 h-3.5" : "text-muted-foreground group-hover:text-foreground w-3.5 h-3.5 sm:w-4 sm:h-4"
                         }`}
                       />
                     </button>
@@ -148,7 +148,7 @@ export default function Page() {
             </div>
 
             <footer
-              className="text-center py-6 border-t border-zinc-200/20 dark:border-zinc-800/20 max-w-[1440px] mx-auto w-full px-6 text-xs font-mono text-zinc-400 dark:text-zinc-600 flex flex-col sm:flex-row justify-between items-center gap-2 shrink-0"
+                className="text-center py-6 border-t border-border/20 max-w-[1440px] mx-auto w-full px-6 text-xs font-mono text-muted-foreground flex flex-col sm:flex-row justify-between items-center gap-2 shrink-0"
               id="app-credit-footer"
             >
               <p>© 2026 @isaiahscape. Built with realm, shenanigans, shadcnUI.</p>

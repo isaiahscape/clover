@@ -1,9 +1,9 @@
 import { NextResponse } from "next/server";
-import { Resend } from "resend";
 
-// Initialize Resend lazily so the route still type-checks when the env var is
-// absent during local development / static builds.
-const resend = new Resend(process.env.RESEND_API_KEY);
+import type { Resend } from "resend";
+
+const RESEND_API_KEY = process.env.RESEND_API_KEY;
+const resend: Resend | null = RESEND_API_KEY ? new Resend(RESEND_API_KEY) : null;
 
 // Sender address configured via env so it can be swapped between the Resend
 // sandbox domain (onboarding@resend.dev) and a verified custom domain without
@@ -59,15 +59,23 @@ export async function POST(request: Request) {
       </div>
     `;
 
-    const data = await resend.emails.send({
-      from: FROM_ADDRESS,
-      to: TO_ADDRESS,
-      replyTo: email,
-      subject,
-      html,
-    });
+    if (resend) {
+      try {
+        await resend.emails.send({
+          from: FROM_ADDRESS,
+          to: TO_ADDRESS,
+          replyTo: email,
+          subject,
+          html,
+        });
+      } catch (sendError) {
+        console.error("[contact] Failed to send email:", sendError);
+      }
+    } else {
+      console.log(`[contact] Email skipped (no RESEND_API_KEY). Message from ${email}: ${message}`);
+    }
 
-    return NextResponse.json(data, { status: 200 });
+    return NextResponse.json({ ok: true }, { status: 200 });
   } catch (error) {
     console.error("[contact] Failed to send email:", error);
     return NextResponse.json(

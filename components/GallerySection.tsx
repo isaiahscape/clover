@@ -44,10 +44,10 @@ export function GallerySection() {
   return (
     <div className="space-y-8 py-4" id="gallery-section">
       <div className="space-y-2" id="gallery-header">
-        <h2 className="text-2xl font-bold tracking-tight text-neutral-950 dark:text-neutral-50 font-sans">
+        <h2 className="text-2xl font-bold tracking-tight text-foreground font-sans">
           Gallery
         </h2>
-        <p className="text-sm text-neutral-500 dark:text-neutral-400 max-w-xl font-sans">
+        <p className="text-sm text-muted-foreground max-w-xl font-sans">
           A curated collection of banners, designs, and photography organized by folder.
         </p>
       </div>
@@ -55,7 +55,7 @@ export function GallerySection() {
       <div className="space-y-8" id="gallery-folders">
         {folders.map((folder) => (
           <div key={folder.name} className="space-y-4" id={`gallery-folder-${folder.name.toLowerCase().replace(/\s+/g, '-')}`}>
-            <h3 className="text-xs font-semibold text-zinc-400 dark:text-zinc-500 uppercase tracking-widest font-mono">
+            <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-widest font-mono">
               {folder.name}
             </h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -66,7 +66,7 @@ export function GallerySection() {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: index * 0.05 }}
                   onClick={() => setSelectedImage(item)}
-                  className="group relative cursor-pointer rounded-xl overflow-hidden border border-zinc-200/60 dark:border-zinc-800/50 bg-zinc-50/50 dark:bg-zinc-900/10 hover:border-zinc-400 dark:hover:border-zinc-600 transition-all"
+                  className="group relative cursor-pointer rounded-xl overflow-hidden border border-border bg-background/50 hover:border-border transition-all"
                 >
                   <div className="aspect-video w-full">
                     <img
@@ -90,11 +90,11 @@ export function GallerySection() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setSelectedImage(null)}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-background/80 backdrop-blur-sm"
           >
             <button
               onClick={() => setSelectedImage(null)}
-              className="absolute top-4 right-4 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
+              className="absolute top-4 right-4 p-2 rounded-full bg-primary/10 hover:bg-primary/20 text-primary-foreground transition-colors"
             >
               <X className="w-5 h-5" />
             </button>

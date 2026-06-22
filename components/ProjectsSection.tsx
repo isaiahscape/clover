@@ -94,7 +94,7 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search projects or tags..."
-            className="pl-9 h-9 text-xs rounded-full bg-zinc-50 dark:bg-zinc-900 border-zinc-200 dark:border-zinc-800/80 font-mono text-zinc-800 dark:text-zinc-200"
+            className="pl-9 h-9 text-xs rounded-full bg-background border-border font-mono text-foreground"
             id="search-input-field"
           />
         </div>
@@ -117,7 +117,7 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
                 exit={{ opacity: 0, scale: 0.98 }}
                 transition={{ duration: 0.18 }}
                 onClick={() => setSelectedProject(project)}
-                className="group relative cursor-pointer flex flex-col justify-between p-6 rounded-2xl border border-zinc-200/60 dark:border-zinc-800/60 bg-white/70 dark:bg-zinc-950/60 backdrop-blur-sm hover:border-zinc-400 dark:hover:border-zinc-600 transition-all shadow-[0_2px_8px_rgba(0,0,0,0.01)] hover:shadow-md min-h-[210px] md:h-[210px] text-left"
+                className="group relative cursor-pointer flex flex-col justify-between p-6 rounded-2xl border border-border bg-background/70 backdrop-blur-sm hover:border-border transition-all shadow-xs hover:shadow-md min-h-[210px] md:h-[210px] text-left"
                 id={`project-card-${project.id}`}
               >
                 {/* Upper row: title, category and link indicator */}
@@ -158,7 +158,7 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
                   </div>
 
                   {project.stats && (
-                    <span className="text-[10px] font-mono text-zinc-400 font-semibold uppercase bg-zinc-50 dark:bg-zinc-900 px-2 py-0.5 rounded border border-zinc-200/40 dark:border-zinc-800/40">
+                    <span className="text-[10px] font-mono text-muted-foreground font-semibold uppercase bg-muted px-2 py-0.5 rounded border border-border">
                       {project.stats}
                     </span>
                   )}
@@ -187,7 +187,7 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
       {/* Project Expand Modal Overlay (Dialog component) */}
       <Dialog open={selectedProject !== null} onOpenChange={(open) => { if (!open) setSelectedProject(null); }}>
         {selectedProject && (
-          <DialogContent showCloseButton={false} className="w-full sm:max-w-xl mx-auto text-left border-zinc-200 dark:border-zinc-800 rounded-2xl bg-white dark:bg-black/95 backdrop-blur-lg font-sans p-4 sm:p-6 max-h-[90vh] overflow-y-auto">
+          <DialogContent showCloseButton={false} className="w-full sm:max-w-xl mx-auto text-left border-border rounded-2xl bg-background backdrop-blur-lg font-sans p-4 sm:p-6 max-h-[90vh] overflow-y-auto">
             <DialogHeader className="space-y-4">
               <div className="flex items-center justify-between">
                 <span className="text-[11px] font-semibold font-mono tracking-widest text-zinc-400 dark:text-zinc-500 uppercase">

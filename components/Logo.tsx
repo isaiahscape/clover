@@ -1,11 +1,17 @@
 "use client";
 
-export function Logo({ className = "w-8 h-8" }: { className?: string }) {
+import React from "react";
+
+interface LogoProps {
+  className?: string;
+}
+
+export function Logo({ className = "" }: LogoProps) {
   return (
-    <div
-      className={`flex items-center justify-center rounded-lg bg-black text-white font-sans font-bold ${className}`}
-    >
-      <span className="text-lg leading-none">삶</span>
+    <div className={`flex items-center justify-center rounded-lg bg-foreground text-background font-sans font-bold ${className}`}>
+      <img src="/favicon.svg" alt="Logo" className="w-6 h-6 dark:invert" />
     </div>
   );
 }
+
+export default Logo;

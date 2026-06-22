@@ -4,7 +4,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import "../index.css";
 
 export const metadata: Metadata = {
-  title: "Leonardo's Terrace",
+  title: "Thysvl's Clover",
   description: "A clean, minimalist personal homepage and projects grid inspired by @lappland's realm, styled with shadcn/ui and powered by Framer Motion.",
   icons: {
     icon: "/favicon.svg",

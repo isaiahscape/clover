@@ -1,17 +1,17 @@
 import { Project, Experience, Profile, StackItem } from './types';
 
 export const DEFAULT_PROFILE: Profile = {
-  name: "Leonardo",
-  username: "isaiahscape",
-  role: "Photographer, Graphic Designer",
-  bio: "Not here to impress — just keeping it real. Welcome to my personal corner of the web.",
-  secondaryBio: "I'm Isiaih Rafael Pavia, living in Davao, Philippines. Age 20. If you're interested in working together, feel free to reach out via my work email.",
+  name: "Iris",
+  username: "thysvl",
+  role: "Graphic Designer",
+  bio: "This might be a guillible placeholder.",
+  secondaryBio: "I'm Aira Pandapatan, living in Davao, Philippines. Age 20. If you're interested in working together, feel free to reach out via my work email.",
   location: "Manila, Philippines",
   avatarUrl: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=faces",
   availability: "available",
   statusHeading: "Currently building",
-  statusText: "shenanigans version two-point-one",
-  codename: "leonardo, isaiahscape",
+  statusText: "shenanigans: clover edition",
+  codename: "thysvl, zealueaxa",
   instagram: {
     username: "isaiahscape",
     followers: 990
