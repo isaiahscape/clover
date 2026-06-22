@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-import type { Resend } from "resend";
+import { Resend } from "resend";
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
 const resend: Resend | null = RESEND_API_KEY ? new Resend(RESEND_API_KEY) : null;

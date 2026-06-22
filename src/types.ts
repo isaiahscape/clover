@@ -44,7 +44,7 @@ export interface Profile {
 
 export interface StackItem {
   name: string;
-  category: 'languages' | 'frameworks' | 'tools' | 'hardware';
+  category: 'applications' | 'toolbox' | 'languages' | 'frameworks' | 'hardware';
   iconName: string;
   level?: string;
 }

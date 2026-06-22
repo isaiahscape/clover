@@ -116,7 +116,7 @@ export default function Page() {
               id="floating-dock-row"
             >
               <nav
-                className="p-1 px-1.5 sm:px-3 flex gap-0.5 sm:gap-1.5 justify-center sm:justify-start items-center rounded-full border border-border/10 bg-background/70 dark:bg-background/65 backdrop-blur-xl shadow-[0_20px_40px_-10px_rgba(0,0,0,0.3)]"
+                className="floating-nav-progressive p-1 px-1.5 sm:px-3 flex gap-0.5 sm:gap-1.5 justify-center sm:justify-start items-center rounded-full shadow-[0_20px_40px_-10px_rgba(0,0,0,0.3)]"
                 id="floating-navigation-island"
               >
                 {navItems.map((item) => {
@@ -138,7 +138,7 @@ export default function Page() {
                       )}
                       <Icon
                         className={`shrink-0 z-10 transition-all duration-200 ${
-                          isActive ? "text-primary-foreground w-3.5 h-3.5" : "text-muted-foreground group-hover:text-foreground w-3.5 h-3.5 sm:w-4 sm:h-4"
+                          isActive ? "text-primary w-4 h-4 drop-shadow-[0_0_8px_hsl(var(--primary)/0.5)]" : "text-muted-foreground group-hover:text-foreground w-3.5 h-3.5 sm:w-4 sm:h-4"
                         }`}
                       />
                     </button>
@@ -151,9 +151,9 @@ export default function Page() {
                 className="text-center py-6 border-t border-border/20 max-w-[1440px] mx-auto w-full px-6 text-xs font-mono text-muted-foreground flex flex-col sm:flex-row justify-between items-center gap-2 shrink-0"
               id="app-credit-footer"
             >
-              <p>© 2026 @isaiahscape. Built with realm, shenanigans, shadcnUI.</p>
+              <p>&copy; 2026 @isaiahscape, @thysvl. Built with realm, shenanigans, shadcnUI.</p>
               <div className="flex gap-4">
-                <a href="https://github.com/thescapeplayground/shenanigans" target="_blank" rel="noreferrer" className="hover:text-indigo-500 dark:hover:text-indigo-400">
+                <a href="https://github.com/isaiahscape/clover" target="_blank" rel="noreferrer" className="hover:text-indigo-500 dark:hover:text-indigo-400">
                   repository
                 </a>
               </div>

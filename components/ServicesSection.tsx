@@ -1,11 +1,11 @@
 "use client";
 
-import { LucideIcon } from "lucide-react";
+import { ComponentType } from "react";
 
 interface Service {
   title: string;
   description: string;
-  icon: LucideIcon;
+  icon: ComponentType<{ className?: string }>;
 }
 
 const services: Service[] = [

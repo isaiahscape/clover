@@ -10,7 +10,7 @@ export function ContactSection({}: ContactSectionProps) {
   const [copiedEmail, setCopiedEmail] = useState(false);
 
   const copyEmail = async () => {
-    await navigator.clipboard.writeText("lqlp0011@gmail.com");
+    await navigator.clipboard.writeText("thysvl.mlr@gmail.com");
     setCopiedEmail(true);
     setTimeout(() => setCopiedEmail(false), 2000);
   };
@@ -18,36 +18,36 @@ export function ContactSection({}: ContactSectionProps) {
   const channels = [
     {
       label: "Email",
-      value: "lqlp0011@gmail.com",
+      value: "thysvl.mlr@gmail.com",
       icon: Mail,
       color: "text-indigo-500",
       onClick: copyEmail,
     },
     {
       label: "Discord",
-      value: "@leeonnnardooo",
+      value: "@thysvl",
       icon: MessageCircle,
       color: "text-sky-500",
       onClick: undefined,
     },
     {
-      label: "GitHub",
-      value: "@isaiahscape",
-      icon: Github,
-      color: "text-purple-500",
+      label: "Instagram",
+      value: "@bunniedoeu",
+      icon: Image,
+      color: "text-pink-500",
       onClick: undefined,
     },
     {
-      label: "Instagram",
+      label: "Github",
       value: "@isaiahscape",
-      icon: Image,
-      color: "text-pink-500",
+      icon: Github,
+      color: "text-violet-500",
       onClick: undefined,
     },
   ];
 
   return (
-    <div className="max-w-2xl mx-auto space-y-8 py-4" id="contact-section-container">
+    <div className="max-w-4xl mx-auto space-y-8 py-4" id="contact-section-container">
       {/* Intro */}
       <div className="text-left space-y-2" id="contact-header-block">
         <h2 className="text-2xl font-bold font-sans tracking-tight text-foreground flex items-center gap-2">
@@ -59,19 +59,19 @@ export function ContactSection({}: ContactSectionProps) {
       </div>
 
       {/* Contact Channels */}
-      <div className="space-y-3" id="contact-channels-list">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3" id="contact-channels-list">
         {channels.map((channel) => (
           <button
             key={channel.label}
             onClick={channel.onClick}
             className={cn(
-              "flex items-center justify-between p-3.5 rounded-xl border border-border bg-background/50 hover:bg-background transition-all cursor-pointer group w-full text-left",
-              copiedEmail && channel.label === "Email" && "border-emerald-500/40 bg-emerald-500/5"
+              "presence-card flex items-center justify-between p-4 rounded-xl transition-all cursor-pointer group w-full text-left shadow-sm",
+              copiedEmail && channel.label === "Email" && "bg-emerald-500/20! border border-emerald-500/40!"
             )}
           >
             <div className="flex items-center gap-3">
-              <div className="p-2 bg-secondary rounded-lg border border-border">
-                <channel.icon className="w-4 h-4 text-indigo-500" />
+              <div className="presence-card-icon flex h-10 w-10 shrink-0 items-center justify-center rounded-lg">
+                <channel.icon className={cn("w-4 h-4", channel.color)} />
               </div>
               <div className="text-left">
                 <p className="text-xs text-muted-foreground font-mono uppercase tracking-wider">{channel.label}</p>
@@ -79,7 +79,7 @@ export function ContactSection({}: ContactSectionProps) {
               </div>
             </div>
             {copiedEmail && channel.label === "Email" && (
-              <span className="text-xs font-mono text-emerald-500">Copied!</span>
+              <span className="text-xs font-mono text-emerald-400">Copied!</span>
             )}
           </button>
         ))}
@@ -115,7 +115,7 @@ export function ContactSection({}: ContactSectionProps) {
               alert(err.error || "Something went wrong.");
             }
           }}
-          className="space-y-4"
+          className="grid grid-cols-1 sm:grid-cols-2 gap-5"
         >
           <div>
             <label className="block text-xs font-mono text-muted-foreground mb-1.5">Name</label>
@@ -123,7 +123,7 @@ export function ContactSection({}: ContactSectionProps) {
               type="text"
               name="name"
               required
-              className="rounded-lg bg-muted/50 border border-border text-foreground h-10 text-sm font-sans px-3"
+              className="w-full rounded-lg bg-muted/50 border border-border text-foreground h-10 text-sm font-sans px-3"
               placeholder="e.g. Robin"
             />
           </div>
@@ -133,22 +133,22 @@ export function ContactSection({}: ContactSectionProps) {
               type="email"
               name="email"
               required
-              className="rounded-lg bg-muted/50 border border-border text-foreground h-10 text-sm font-mono px-3"
+              className="w-full rounded-lg bg-muted/50 border border-border text-foreground h-10 text-sm font-mono px-3"
               placeholder="e.g. robin@domain.com"
             />
           </div>
-          <div>
+          <div className="sm:col-span-2">
             <label className="block text-xs font-mono text-muted-foreground mb-1.5">Message</label>
             <textarea
               name="message"
               required
-              className="rounded-lg bg-muted/50 border border-border text-foreground text-sm font-sans h-28 resize-none px-3 py-2"
+              className="w-full rounded-lg bg-muted/50 border border-border text-foreground text-sm font-sans h-28 resize-none px-3 py-2"
               placeholder="I'm planning to launch an electronic project..."
             />
           </div>
           <button
             type="submit"
-            className="w-full py-2.5 rounded-xl bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition-opacity"
+            className="w-full sm:col-span-2 py-2.5 rounded-xl bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition-opacity"
           >
             Send Message
           </button>

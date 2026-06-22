@@ -48,7 +48,7 @@
 }
 
 :root {
-    --background: hsl(255 33% 96%);
+    --background: hsl(260 68% 90%);
     --foreground: hsl(255 77% 13%);
     --card: hsl(255 33% 97%);
     --card-foreground: hsl(255 77% 13%);
@@ -83,7 +83,7 @@
 }
 
 .dark {
-    --background: hsl(255 50% 11%);
+    --background: hsl(260 44% 22%);
     --foreground: hsl(255 20% 91%);
     --card: hsl(255 45% 13%);
     --card-foreground: hsl(255 20% 91%);
@@ -126,6 +126,115 @@
   html {
     @apply font-sans;
     }
+}
+
+.floating-nav-progressive {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--border) 48%, transparent);
+  background: color-mix(in srgb, var(--background) 42%, transparent);
+}
+
+.floating-nav-progressive::before,
+.floating-nav-progressive::after {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  content: "";
+  pointer-events: none;
+}
+
+.floating-nav-progressive > * {
+  position: relative;
+  z-index: 1;
+}
+
+.floating-nav-progressive::before {
+  backdrop-filter: blur(10px) saturate(1.25);
+  -webkit-backdrop-filter: blur(10px) saturate(1.25);
+}
+
+.floating-nav-progressive::after {
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    color-mix(in srgb, var(--background) 24%, transparent) 58%,
+    color-mix(in srgb, var(--background) 48%, transparent) 100%
+  );
+  backdrop-filter: blur(24px) saturate(1.45);
+  -webkit-backdrop-filter: blur(24px) saturate(1.45);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 48%, black 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 48%, black 100%);
+}
+
+.dark .floating-nav-progressive {
+  border-color: color-mix(in srgb, var(--border) 42%, transparent);
+  background: color-mix(in srgb, var(--background) 34%, transparent);
+}
+
+.presence-card {
+  border: 0;
+  background: hsl(263 56% 21%);
+  color: hsl(255 30% 95%);
+  box-shadow: 0 16px 32px -20px hsl(260 70% 10% / 0.72);
+}
+
+.presence-card:hover {
+  background: hsl(263 58% 24%);
+}
+
+.presence-card .text-foreground {
+  color: hsl(255 35% 97%);
+}
+
+.presence-card .text-muted-foreground {
+  color: hsl(255 24% 78%);
+}
+
+.presence-card-icon {
+  background: hsl(262 62% 16%);
+}
+
+.project-card {
+  border: 0;
+  background: hsl(263 56% 21%);
+  color: hsl(255 30% 95%);
+  box-shadow: 0 18px 34px -22px hsl(260 70% 10% / 0.76);
+}
+
+.project-card:hover {
+  background: hsl(263 58% 24%);
+  box-shadow: 0 22px 44px -24px hsl(260 72% 8% / 0.82);
+}
+
+.project-card .text-neutral-900,
+.project-card .dark\:text-neutral-100,
+.project-card .text-foreground {
+  color: hsl(255 35% 97%);
+}
+
+.project-card .text-zinc-500,
+.project-card .dark\:text-zinc-400,
+.project-card .text-muted-foreground {
+  color: hsl(255 24% 78%);
+}
+
+.project-card .text-zinc-400,
+.project-card .dark\:text-zinc-500 {
+  color: hsl(255 20% 68%);
+}
+
+.project-card .border-zinc-100,
+.project-card .dark\:border-zinc-900\/50 {
+  border-color: hsl(262 48% 32% / 0.7);
+}
+
+.project-card .bg-zinc-100,
+.project-card .dark\:bg-zinc-900,
+.project-card .bg-muted {
+  background: hsl(262 62% 16%);
 }
 
 /* Hide scrollbar completely across all browsers */

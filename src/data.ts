@@ -13,8 +13,8 @@ export const DEFAULT_PROFILE: Profile = {
   statusText: "shenanigans: clover edition",
   codename: "thysvl, zealueaxa",
   instagram: {
-    username: "isaiahscape",
-    followers: 990
+    username: "bunniedoeu",
+    followers: 185
   }
 };
 
@@ -115,14 +115,13 @@ export const DEFAULT_EXPERIENCES: Experience[] = [
 export const DEFAULT_STACK: StackItem[] = [
   { name: "React", category: "frameworks", iconName: "Code2", level: "Advanced" },
   { name: "TypeScript", category: "languages", iconName: "Terminal", level: "Expert" },
-  { name: "Vite", category: "tools", iconName: "Cpu", level: "Advanced" },
   { name: "Tailwind CSS", category: "frameworks", iconName: "Palette", level: "Expert" },
   { name: "Framer Motion", category: "frameworks", iconName: "Activity", level: "Advanced" },
-  { name: "Node.js (Express)", category: "frameworks", iconName: "Server", level: "Intermediate" },
-  { name: "Git / GitHub", category: "tools", iconName: "Github", level: "Advanced" },
-  { name: "VS Code", category: "tools", iconName: "Laptop", level: "Expert" },
-  { name: "Figma", category: "tools", iconName: "PenTool", level: "Intermediate" },
-  { name: "Audio Gear", category: "hardware", iconName: "Music", level: "Favorite" },
-  { name: "HHKB Professional", category: "hardware", iconName: "Keyboard", level: "Daily Driver" },
-  { name: "MacBook Pro m3", category: "hardware", iconName: "Laptop", level: "Workhorse" }
+  { name: "Node.js (Express)", category: "frameworks", iconName: "Server" },
+  { name: "Adobe Photoshop", category: "applications", iconName: "Photoshop", level: "Advanced" },
+  { name: "Adobe Illustrator", category: "applications", iconName: "Illustrator", level: "Advanced" },
+  { name: "Adobe Lightroom", category: "applications", iconName: "Lightroom", level: "Intermediate" },
+  { name: "Adobe InDesign", category: "applications", iconName: "InDesign", level: "Intermediate" },
+  { name: "Canva", category: "applications", iconName: "Canva", level: "Advanced" },
+  { name: "CapCut", category: "applications", iconName: "CapCut", level: "Intermediate" },
 ];

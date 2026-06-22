@@ -117,7 +117,7 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
                 exit={{ opacity: 0, scale: 0.98 }}
                 transition={{ duration: 0.18 }}
                 onClick={() => setSelectedProject(project)}
-                className="group relative cursor-pointer flex flex-col justify-between p-6 rounded-2xl border border-border bg-background/70 backdrop-blur-sm hover:border-border transition-all shadow-xs hover:shadow-md min-h-[210px] md:h-[210px] text-left"
+                className="project-card group relative cursor-pointer flex flex-col justify-between p-6 rounded-2xl transition-all min-h-[210px] md:h-[210px] text-left"
                 id={`project-card-${project.id}`}
               >
                 {/* Upper row: title, category and link indicator */}

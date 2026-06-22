@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Clock, MapPin, Radio, Activity, Github, Instagram, Youtube, MessageCircle, Linkedin, Twitch, Music2, MailCheck, MailX } from "lucide-react";
+import { Clock, Activity, Instagram, MessageCircle, Music2, MailCheck, MailX } from "lucide-react";
 
 interface PresenceClockProps {
   location: string;
@@ -53,12 +53,8 @@ export function PresenceClock({ location, statusText, codename, instagramUsernam
     ? instagramFollowers.toLocaleString()
     : undefined;
   const socialLinks = [
-    { href: "https://youtube.com/@isaiahscape", icon: Youtube, label: "YouTube", color: "text-red-500" },
-    { href: "https://t.me/isaiahscape", icon: MessageCircle, label: "Telegram", color: "text-sky-500" },
-    { href: "https://linkedin.com/in/isaiahscape", icon: Linkedin, label: "LinkedIn", color: "text-blue-600" },
-    { href: "https://twitch.tv/isaiahscape", icon: Twitch, label: "Twitch", color: "text-purple-500" },
-    { href: "https://tiktok.com/@isaiahscape", icon: Music2, label: "TikTok", color: "text-foreground" },
-    { href: "https://github.com/thescapeplayground/shenanigans", icon: Github, label: "GitHub", color: "text-foreground" },
+    { href: "https://t.me/zealueaxa", icon: MessageCircle, label: "Telegram", color: "text-sky-500" },
+    { href: "https://tiktok.com/@thysvl.co", icon: Music2, label: "TikTok", color: "text-foreground" },
   ];
 
   return (
@@ -66,11 +62,11 @@ export function PresenceClock({ location, statusText, codename, instagramUsernam
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" id="presence-clock-grid">
       {/* Timezone / Location Indicator */}
       <div
-        className="flex items-center gap-4 p-4 rounded-xl border border-border bg-background/50 backdrop-blur-sm shadow-sm"
+        className="presence-card flex items-center gap-4 p-4 rounded-xl shadow-sm"
         id="col-location-time"
       >
-        <div className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-secondary w-10 h-10">
-          <Clock className="w-5 h-5 text-muted-foreground" />
+        <div className="presence-card-icon relative flex h-10 w-10 shrink-0 items-center justify-center rounded-lg">
+          <Clock className="w-5 h-5 text-violet-100" />
           <span className="absolute bottom-1 right-1 flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
@@ -88,11 +84,11 @@ export function PresenceClock({ location, statusText, codename, instagramUsernam
 
       {/* Live Status Tracker */}
       <div
-        className="flex items-center gap-4 p-4 rounded-xl border border-border bg-background/50 backdrop-blur-sm shadow-sm"
+        className="presence-card flex items-center gap-4 p-4 rounded-xl shadow-sm"
         id="col-current-activity"
       >
-        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-secondary w-10 h-10">
-          <Activity className="w-5 h-5 text-muted-foreground animate-pulse text-primary" />
+        <div className="presence-card-icon flex h-10 w-10 shrink-0 items-center justify-center rounded-lg">
+          <Activity className="w-5 h-5 animate-pulse text-violet-100" />
         </div>
         <div className="text-left overflow-hidden w-full">
           <p className="text-xs text-muted-foreground font-mono flex items-center gap-1 pr-2">
@@ -106,12 +102,12 @@ export function PresenceClock({ location, statusText, codename, instagramUsernam
 
       {/* Codename Card */}
       <div
-        className="flex items-center justify-between p-4 rounded-xl border border-border bg-background/50 backdrop-blur-sm shadow-sm"
+        className="presence-card flex items-center justify-between p-4 rounded-xl shadow-sm"
         id="col-codename"
       >
         <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-secondary">
-            <span className="text-xs font-mono font-bold text-muted-foreground">
+          <div className="presence-card-icon flex h-10 w-10 shrink-0 items-center justify-center rounded-lg">
+            <span className="text-xs font-mono font-bold text-violet-100">
               #
             </span>
           </div>
@@ -131,11 +127,11 @@ export function PresenceClock({ location, statusText, codename, instagramUsernam
         href={`https://instagram.com/${instagramUsername || "isaiahscape"}`}
         target="_blank"
         rel="noreferrer"
-        className="flex items-center justify-between p-4 rounded-xl border border-border bg-background/50 backdrop-blur-sm shadow-sm hover:border-border transition-colors duration-150"
+        className="presence-card flex items-center justify-between p-4 rounded-xl shadow-sm transition-colors duration-150"
         id="col-instagram"
       >
         <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-secondary">
+          <div className="presence-card-icon flex h-10 w-10 shrink-0 items-center justify-center rounded-lg">
             <Instagram className="w-5 h-5 text-pink-500" />
           </div>
           <div className="text-left">
@@ -164,12 +160,12 @@ export function PresenceClock({ location, statusText, codename, instagramUsernam
 
       {/* Social Links Card */}
       <div
-        className="flex items-center justify-between p-4 rounded-xl border border-border bg-background/50 backdrop-blur-sm shadow-sm"
+        className="presence-card flex items-center justify-between p-4 rounded-xl shadow-sm"
         id="col-social-links"
       >
         <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-secondary w-10 h-10">
-            <span className="text-xs font-mono font-bold text-muted-foreground">
+          <div className="presence-card-icon flex h-10 w-10 shrink-0 items-center justify-center rounded-lg">
+            <span className="text-xs font-mono font-bold text-violet-100">
               @
             </span>
           </div>
@@ -200,11 +196,11 @@ export function PresenceClock({ location, statusText, codename, instagramUsernam
 
       {/* Resend Status Card */}
       <div
-        className="flex items-center justify-between p-4 rounded-xl border border-border bg-background/50 backdrop-blur-sm shadow-sm"
+        className="presence-card flex items-center justify-between p-4 rounded-xl shadow-sm"
         id="col-resend-status"
       >
         <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-secondary">
+          <div className="presence-card-icon flex h-10 w-10 shrink-0 items-center justify-center rounded-lg">
             {resendChecking ? (
               <Activity className="w-5 h-5 text-muted-foreground animate-spin" />
             ) : resendStatus?.connected ? (

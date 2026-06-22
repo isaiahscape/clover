@@ -40,12 +40,12 @@ export function HomeSection({ profile, experiences }: HomeSectionProps) {
         <div className="flex items-center gap-3">
           <BadgeAvailability />
           <span className="text-xs font-mono text-muted-foreground uppercase tracking-widest flex items-center gap-1">
-            Photographer, Graphic Designer
+            Creative Designer
           </span>
         </div>
 
         <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-foreground font-sans leading-[1.1] mt-2">
-          I'm <span className="font-mono text-primary">{profile.name}</span>, but just in public set.
+          This is <span className="text-primary">{profile.name}</span>, and I love purple.
         </h1>
         
         <p className="text-lg text-foreground leading-relaxed font-sans max-w-3xl">
