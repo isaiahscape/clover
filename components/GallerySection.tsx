@@ -66,7 +66,7 @@ export function GallerySection() {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: index * 0.05 }}
                   onClick={() => setSelectedImage(item)}
-                  className="group relative cursor-pointer rounded-xl overflow-hidden border border-border bg-background/50 hover:border-border transition-all"
+                  className="card-surface group relative cursor-pointer rounded-xl overflow-hidden border transition-all"
                 >
                   <div className="aspect-video w-full">
                     <img

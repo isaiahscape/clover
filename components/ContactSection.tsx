@@ -87,7 +87,7 @@ export function ContactSection({}: ContactSectionProps) {
 
       {/* Form */}
       <div
-        className="p-6 sm:p-8 rounded-2xl border border-border bg-background/50 backdrop-blur-sm shadow-sm relative overflow-hidden"
+        className="card-surface p-6 sm:p-8 rounded-2xl border shadow-sm relative overflow-hidden"
         id="contact-form-pane"
       >
         <form

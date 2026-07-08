@@ -46,7 +46,7 @@ function StackGroup({ title, items }: { title: string; items: StackItem[] }) {
               initial={{ opacity: 0, scale: 0.98 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.2 }}
-              className="flex items-center gap-3 p-3 rounded-xl border border-border bg-muted/50 hover:border-border transition-colors duration-200 cursor-help"
+              className="card-surface flex items-center gap-3 p-3 rounded-xl border transition-colors duration-200 cursor-help"
               id={`stack-item-${item.name.replace(/\s+/g, "-").toLowerCase()}`}
             >
               <Tooltip>

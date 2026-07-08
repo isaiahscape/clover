@@ -44,8 +44,8 @@ export function HomeSection({ profile, experiences }: HomeSectionProps) {
           </span>
         </div>
 
-        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-foreground font-sans leading-[1.1] mt-2">
-          This is <span className="text-primary">{profile.name}</span>, and I love purple.
+        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight font-sans leading-[1.1] mt-2 bg-gradient-to-r from-purple-500 to-indigo-500 bg-clip-text text-transparent">
+          This is {profile.name}, and I love purple.
         </h1>
         
         <p className="text-lg text-foreground leading-relaxed font-sans max-w-3xl">
@@ -77,55 +77,57 @@ export function HomeSection({ profile, experiences }: HomeSectionProps) {
           <span className="text-xs font-mono text-muted-foreground">Archived Timeline</span>
         </div>
 
-        <div className="relative border-l border-border lg:ml-2 pl-4 sm:pl-6 space-y-8 sm:space-y-10" id="experience-vertical-timeline">
+        <div className="relative border-l border-violet-500/30 lg:ml-2 pl-4 sm:pl-6 space-y-8 sm:space-y-10" id="experience-vertical-timeline">
           {experiences.map((exp, index) => (
             <div key={exp.id} className="relative group text-left" id={`timeline-item-${exp.id}`}>
               {/* Timeline bubble indicator */}
-              <div className="absolute -left-[21px] sm:-left-[29px] top-1.5 bg-background border border-border w-3 h-3 rounded-full group-hover:bg-primary transition-colors duration-300 ring-4 ring-background" />
+              <div className="absolute -left-[21px] sm:-left-[29px] top-5 bg-primary border-2 border-violet-300 w-3 h-3 rounded-full group-hover:bg-primary transition-colors duration-300 ring-4 ring-violet-950/50 z-10" />
               
-              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
-                <h3 className="text-base font-bold text-foreground font-sans flex items-center gap-1.5 group-hover:text-primary transition-colors duration-200">
-                  {exp.role}
-                </h3>
-                <span className="text-xs font-mono text-muted-foreground shrink-0">
-                  {exp.period}
-                </span>
-              </div>
-
-              <div className="mt-0.5" id={`timeline-company-${exp.id}`}>
-                {exp.companyUrl && exp.companyUrl !== "#" ? (
-                  <a 
-                    href={exp.companyUrl}
-                    target="_blank"
-                    referrerPolicy="no-referrer"
-                    rel="noreferrer"
-                    className="text-xs font-semibold text-muted-foreground hover:text-foreground duration-150 inline-flex items-center gap-0.5 border-b border-dashed border-border pb-0.5 font-mono"
-                  >
-                    {exp.company} <ArrowUpRight className="w-3 h-3 text-muted-foreground" />
-                  </a>
-                ) : (
-                  <span className="text-xs font-semibold text-muted-foreground font-mono">
-                    {exp.company}
+              <div className="card-surface rounded-xl p-4 border text-left">
+                <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+                  <h3 className="text-base font-bold text-foreground font-sans flex items-center gap-1.5 group-hover:text-primary transition-colors duration-200">
+                    {exp.role}
+                  </h3>
+                  <span className="text-xs font-mono text-muted-foreground shrink-0">
+                    {exp.period}
                   </span>
+                </div>
+
+                <div className="mt-0.5" id={`timeline-company-${exp.id}`}>
+                  {exp.companyUrl && exp.companyUrl !== "#" ? (
+                    <a 
+                      href={exp.companyUrl}
+                      target="_blank"
+                      referrerPolicy="no-referrer"
+                      rel="noreferrer"
+                      className="text-xs font-semibold text-muted-foreground hover:text-foreground duration-150 inline-flex items-center gap-0.5 border-b border-dashed border-border pb-0.5 font-mono"
+                    >
+                      {exp.company} <ArrowUpRight className="w-3 h-3 text-muted-foreground" />
+                    </a>
+                  ) : (
+                    <span className="text-xs font-semibold text-muted-foreground font-mono">
+                      {exp.company}
+                    </span>
+                  )}
+                </div>
+
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed font-sans max-w-xl">
+                  {exp.description}
+                </p>
+
+                {exp.tags && (
+                  <div className="flex flex-wrap gap-1 mt-3" id={`timeline-tech-${exp.id}`}>
+                    {exp.tags.map((tag) => (
+                      <span 
+                        key={tag} 
+                        className="px-2 py-0.5 text-[10px] font-mono rounded bg-violet-950/60 text-violet-200 border border-violet-500/20"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 )}
               </div>
-
-              <p className="mt-2 text-sm text-muted-foreground leading-relaxed font-sans max-w-xl">
-                {exp.description}
-              </p>
-
-              {exp.tags && (
-                <div className="flex flex-wrap gap-1 mt-3" id={`timeline-tech-${exp.id}`}>
-                  {exp.tags.map((tag) => (
-                    <span 
-                      key={tag} 
-                      className="px-2 py-0.5 text-[10px] font-mono rounded bg-muted text-foreground border border-border"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              )}
             </div>
           ))}
         </div>

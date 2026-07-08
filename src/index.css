@@ -174,15 +174,44 @@
   background: color-mix(in srgb, var(--background) 34%, transparent);
 }
 
+.floating-nav-progressive.header-blur {
+  overflow: visible;
+  border: 0;
+  background: transparent;
+}
+
+.floating-nav-progressive.header-blur::before,
+.floating-nav-progressive.header-blur::after {
+  border-radius: 0;
+}
+
+.floating-nav-progressive.header-blur::before {
+  backdrop-filter: blur(12px) saturate(1.25);
+  -webkit-backdrop-filter: blur(12px) saturate(1.25);
+}
+
+.floating-nav-progressive.header-blur::after {
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    color-mix(in srgb, var(--background) 24%, transparent) 58%,
+    color-mix(in srgb, var(--background) 48%, transparent) 100%
+  );
+  backdrop-filter: blur(24px) saturate(1.45);
+  -webkit-backdrop-filter: blur(24px) saturate(1.45);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 48%, black 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 48%, black 100%);
+}
+
 .presence-card {
   border: 0;
-  background: hsl(263 56% 21%);
+  background: hsl(270 45% 18%);
   color: hsl(255 30% 95%);
-  box-shadow: 0 16px 32px -20px hsl(260 70% 10% / 0.72);
+  box-shadow: 0 16px 32px -20px hsl(270 70% 8% / 0.72);
 }
 
 .presence-card:hover {
-  background: hsl(263 58% 24%);
+  background: hsl(270 47% 21%);
 }
 
 .presence-card .text-foreground {
@@ -194,19 +223,44 @@
 }
 
 .presence-card-icon {
-  background: hsl(262 62% 16%);
+  background: hsl(270 60% 13%);
+}
+
+/* Universal card surface — used across all card-type containers */
+.card-surface {
+  background: hsl(270 45% 18%) !important;
+  border-color: hsl(270 48% 28% / 0.6) !important;
+  color: hsl(255 30% 95%);
+}
+.card-surface:hover {
+  background: hsl(270 47% 21%) !important;
+  border-color: hsl(270 48% 28% / 0.7) !important;
+}
+.card-surface .text-muted-foreground {
+  color: hsl(255 24% 78%);
+}
+.card-surface .text-foreground {
+  color: hsl(255 35% 97%);
+}
+.dark .card-surface {
+  background: hsl(270 45% 18%) !important;
+  border-color: hsl(270 48% 28% / 0.6) !important;
+}
+.dark .card-surface:hover {
+  background: hsl(270 47% 21%) !important;
+  border-color: hsl(270 48% 28% / 0.7) !important;
 }
 
 .project-card {
   border: 0;
-  background: hsl(263 56% 21%);
+  background: hsl(270 45% 18%);
   color: hsl(255 30% 95%);
-  box-shadow: 0 18px 34px -22px hsl(260 70% 10% / 0.76);
+  box-shadow: 0 18px 34px -22px hsl(270 70% 8% / 0.76);
 }
 
 .project-card:hover {
-  background: hsl(263 58% 24%);
-  box-shadow: 0 22px 44px -24px hsl(260 72% 8% / 0.82);
+  background: hsl(270 47% 21%);
+  box-shadow: 0 22px 44px -24px hsl(270 72% 6% / 0.82);
 }
 
 .project-card .text-neutral-900,
@@ -228,13 +282,13 @@
 
 .project-card .border-zinc-100,
 .project-card .dark\:border-zinc-900\/50 {
-  border-color: hsl(262 48% 32% / 0.7);
+  border-color: hsl(270 48% 28% / 0.7);
 }
 
 .project-card .bg-zinc-100,
 .project-card .dark\:bg-zinc-900,
 .project-card .bg-muted {
-  background: hsl(262 62% 16%);
+  background: hsl(270 60% 13%);
 }
 
 /* Hide scrollbar completely across all browsers */

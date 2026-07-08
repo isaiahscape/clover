@@ -58,7 +58,7 @@ export function ServicesSection() {
         {services.map((service, idx) => (
           <div
             key={idx}
-            className="flex flex-col rounded-xl border border-border bg-background/50 hover:border-border transition-all overflow-hidden"
+            className="card-surface flex flex-col rounded-xl border transition-all overflow-hidden"
           >
             <div className="p-4">
               <div className="flex items-center gap-3 mb-2">
